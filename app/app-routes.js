@@ -18,7 +18,12 @@ angular.module('ng-music')
             .state({
                 name: 'albums',
                 url: '/albums',
-                template: 'Maybe you should render your albums component here', //Get the right component here and go look at your page
+                template: '<albums></albums>', //Get the right component here and go look at your page
+            })
+            .state({
+                name: 'album',
+                url: '/albums/:id',
+                template: '<album></album>'
             })
 
             //You will notice the more dets button is broken look at your dev tools. Now its time to add that next state

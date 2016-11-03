@@ -12,5 +12,18 @@
         //Be sure to get the desired album on some property that you can use in the view
 
         //Once you get the basics built out can you modify the MusicService to use the Itunes API???
+
+        var id = $stateParams.id
+        var ac = this;
+
+        MusicService.getAlbumById(id, function(res){
+            var album = res.data.results[0]
+            var tracks = res.data.results.slice(1)
+            album.tracks = tracks
+            ac.album = album
+        });
+        
+
+
     }
 } ())

@@ -1,8 +1,14 @@
+<link rel="stylesheet" href="/assets/css/album.css">
 <div class="album-details">
 	<div class="jumbotron">
-		<h1>YOUR ALBUM SHOULD SHOW UP HERE</h1>
+		<img src="https://s-media-cache-ak0.pinimg.com/originals/e2/6d/87/e26d873ee68fbcd9dc1c40d8b0c6b3b4.gif" alt="" ng-if="!$ctrl.album">
+		<img ng-src="{{$ctrl.album.artworkUrl100}}" />
+		<h1 class="album">{{$ctrl.album.collectionName}}</h1>
 		<ul>
-			<li>You may want to show all of the tracks in a paticular ALBUM here</li>
+			<li ng-repeat="track in $ctrl.album.tracks" ng-show="track.trackName">
+				{{track.trackName}}
+				<audio src="{{track.previewUrl}}" controls></audio>
+			</li>
 		</ul>
 	<div>
 </div>

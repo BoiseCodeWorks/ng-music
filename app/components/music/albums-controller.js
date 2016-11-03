@@ -9,11 +9,15 @@
     
     function AlbumsController(MusicService) {
         var cc = this;
-        cc.showDetails = function (album) {
-            cc.show = true;
-            cc.selectedAlbum = album;
+
+        this.search = function(term){
+            MusicService.getAllAlbums(term, function(res){
+                cc.albums = res.data.results
+            });
         }
-        cc.albums = MusicService.getAllAlbums();
+
+        this.search('nelly')
+
     }
 
 } ())

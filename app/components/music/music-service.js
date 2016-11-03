@@ -1,13 +1,22 @@
 angular.module('ng-music')
-    .service('MusicService', function () {
+    .service('MusicService', function ($http) {
         var ms = this;
 
-        ms.getAllAlbums = function () {
+        var getter = '//bcw-getter.herokuapp.com/?url='
+        var albumsUrl = 'https://itunes.apple.com/search?media=music&entity=album&term='
+        var albumUrl = 'https://itunes.apple.com/lookup?entity=song&id='
+       
+        var albumsApiUrl = getter + encodeURIComponent(albumsUrl)
+
+        var albumApiUrl = getter + encodeURIComponent(albumUrl)
+
+        ms.getAllAlbums = function (term, cb) {
             // Go Ahead and return the albums
+            $http.get(albumsApiUrl+term).then(cb)
         }
 
-        ms.getAlbumById = function (id) {
-            //You should return the album by its id
+        ms.getAlbumById = function (id, cb) {
+            $http.get(albumApiUrl+id).then(cb)
         }
 
         // Once you finish these two functions head over to app-routes and make sure your albums state is rendering the <albums> component
