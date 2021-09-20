@@ -38,3 +38,18 @@ http://localhost:8080/#/albums/557119
 
 To pull this off your `AlbumController` will need access to your AlbumService and call the method `getAlbumById` and pass in the appropriate property from your `$stateParams`.  As long as you built out your service and routes you should be able to attach that album to your `AlbumController` and start building your view for an individual album.   
 
+
+
+## Legal Overview
+
+The content under the CodeWorks®, LLC Organization and all of the individual repos are soley intended for use by CodeWorks Instruction to deliver Educational content to CodeWorks Students.
+
+---
+
+## Copyright
+
+© CodeWorks® LLC, 2021. Unauthorized use and/or duplication of this material without express and written permission from CodeWorks, LLC is strictly prohibited.
+
+
+<img src="https://bcw.blob.core.windows.net/public/img/7815839041305055" width="125">
+
